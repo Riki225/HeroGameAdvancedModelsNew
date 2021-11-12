@@ -65,7 +65,7 @@ namespace HeroGameAdvancedLib {
 
         // Roll returns an integer between Min and Max inclusive
         public int Roll() {
-            return rand.Next(this.Min, this.Max);
+            return rand.Next(this.Min, this.Max+1);
         }
     }
 }

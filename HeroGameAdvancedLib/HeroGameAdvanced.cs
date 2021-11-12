@@ -17,8 +17,17 @@ namespace HeroGameAdvancedLib {
         // Hero is able to attack a given number of times.  Each time a hero attacks subtract 1 from Uses
         // timesToAttack is greater that the number of Uses should return -1 and not subtract from Uses.
         public int Attack(int timesToAttack) {
-            this.Uses -= timesToAttack;
-            return this.Dice.Roll() * timesToAttack;
+            if(timesToAttack<=this.Uses && timesToAttack>=0){
+                int totalAttack = 0;
+                for(int i=0 ; i<timesToAttack ; i++){
+                    this.Uses -= 1;
+                    totalAttack += this.Dice.Roll();
+                }
+                return totalAttack;
+            } else {
+                return -1;
+            }
+
         }
 
         
